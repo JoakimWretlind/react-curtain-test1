@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { GlobalStyle } from './globalStyle'
+import Home from "./pages/Home";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Home />
+    </>
   );
 }
 
-export default App;
+// TODO:
+// apply effect only when image is hovered (currently the effect is on as soon as the mouse is moved)
+// custom cursor with effect on hover
+// make header clickable - affect custom cursor
