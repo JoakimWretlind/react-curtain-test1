@@ -2,10 +2,12 @@ import React, { useRef, useState } from "react";
 import { Plane, useCurtains } from "react-curtains";
 import { Vec2 } from "curtainsjs";
 import { vertexShader, fragmentShader } from "../Shaders/shaders";
+import { Img } from '../../pages/home.style'
 // css in globalstyle
 
 function SimplePlane() {
     const [plane, setPlane] = useState(null);
+    const { hovered, setIsHovered } = useState(false)
     // Vec2 is the class used for all 2 dimensions vector manipulations
     const mousePosition = useRef(new Vec2());
     const mouseLastPosition = useRef(new Vec2());
@@ -148,10 +150,12 @@ function SimplePlane() {
             onRender={onRender}
             onAfterResize={onAfterResize}
         >
-            <img
+            <Img
                 src="https://unsplash.it/1920/1080?random=1"
                 data-sampler="simplePlaneTexture"
                 alt=""
+                onMouseOver={() => setIsHovered(hovered)}
+                onMouseLeave={() => setIsHovered(!hovered)}
             />
         </Plane >
     );

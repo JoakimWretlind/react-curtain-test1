@@ -42,3 +42,8 @@ export const H1 = styled.h1`
     border-radius: .4rem;
     cursor: pointer;
 `;
+
+export const Img = styled.img`
+    display: none;
+  object-fit: cover;
+`;
